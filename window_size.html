@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window-size</title>
+  </head>
+  <body>
+    <div id="box" style="background-color: violet">
+      <p>
+        window.screen:<span class="screen"></span>,<span class="screen"></span>
+      </p>
+      <p>
+        window.outer:<span class="outer"></span>,<span class="outer"></span>
+      </p>
+      <p>
+        window.inner:<span class="inner"></span>,<span class="inner"></span>
+      </p>
+      <p>
+        documentElement.clientWidth:<span class="document"></span>,<span
+          class="document"
+        ></span>
+      </p>
+    </div>
+    >
+    <script>
+      function browserResize() {
+        const screenWidth = window.screen.width;
+        const screenHeight = window.screen.height;
+        const outerWidth = window.outerWidth;
+        const outerHeight = window.outerHeight;
+        const innerWidth = window.innerWidth;
+        const innerHeight = window.innerHeight;
+        const dEcw = document.documentElement.clientWidth;
+        const dEch = document.documentElement.clientHeight;
+
+        document.getElementsByClassName("screen")[0].innerText = screenWidth;
+        document.getElementsByClassName("screen")[1].innerText = screenHeight;
+        document.getElementsByClassName("outer")[0].innerText = outerWidth;
+        document.getElementsByClassName("outer")[1].innerText = outerHeight;
+        document.getElementsByClassName("inner")[0].innerText = innerWidth;
+        document.getElementsByClassName("inner")[1].innerText = innerHeight;
+        document.getElementsByClassName("document")[0].innerText = dEcw;
+        document.getElementsByClassName("document")[1].innerText = dEch;
+      }
+
+      browserResize();
+
+      window.addEventListener("resize", browserResize);
+    </script>
+  </body>
+</html>
