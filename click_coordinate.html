@@ -26,12 +26,12 @@
       for (let i = 0; i < boxes.length; i++) {
         boxes[i].addEventListener("click", handleClick);
       }
-      function handleClick(e) {
+      function handleClick(event) {
         // document.onclick = function (e) {
-        const cursorX = e.pageX;
-        const cursorY = e.pageY;
-        const clientX = e.clientX;
-        const clientY = e.clientY;
+        const cursorX = event.pageX;
+        const cursorY = event.pageY;
+        const clientX = event.clientX;
+        const clientY = event.clientY;
         console.log(cursorX, cursorY, clientX, clientY);
       }
     </script>
